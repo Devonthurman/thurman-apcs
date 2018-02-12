@@ -10,6 +10,14 @@ class ValidationUtils {
         else {
             System.out.println("String Failure!");
         }
+        System.out.print("Enter an int: ");
+        Scanner scan = new Scanner(System.in);
+        if(isValidInt(scan)){System.out.println("Int Success!");
+        }
+        else {
+            System.out.println("Int Failure!");
+            }
+
     }
 
     
@@ -23,3 +31,12 @@ class ValidationUtils {
         return true; //No error was raised. The scanner read it successfully as a String.
     }
 }
+    public static Boolean isValidInt(Scanner scan) {
+        try {
+            Int s = scan.nextLine();
+        }
+        catch(Exception e) {
+            return false;
+        }
+        return true;
+    }
