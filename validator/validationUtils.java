@@ -28,6 +28,17 @@ class ValidationUtils {
         else {
             System.out.println("Double Failure!");
         }
+        
+        System.out.print("Enter a Boolean: ");
+        Scanner scan4 = new Scanner(System.in);
+        if(isValidBoolean(scan4)) {
+            System.out.println("Boolean Success!");
+        }
+        else {
+            System.out.println("Boolean Failure!");
+        }
+      
+       
     }
 
     public static Boolean isValidString(Scanner scan) {
@@ -59,5 +70,18 @@ class ValidationUtils {
         }
         return true; 
     }
-    }
+    
+    public static Boolean isValidBoolean(Scanner scan4) {
+            String s = scan4.nextLine();
+           return (
+                s.toLowerCase().equals("f")||
+                s.toLowerCase().equals("false")||
+                s.toLowerCase().equals("t")||
+                s.toLowerCase().equals("true")
+           );
 
+        
+        }
+}
+    
+        
