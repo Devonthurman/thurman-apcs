@@ -29,15 +29,9 @@ class ValidationUtils {
             System.out.println("Double Failure!");
         }
         
-        System.out.print("Enter a Boolean: ");
+        
         Scanner scan4 = new Scanner(System.in);
-        if(isValidBoolean(scan4)) {
-            System.out.println("Boolean Success!");
-        }
-        else {
-            System.out.println("Boolean Failure!");
-        }
-        while (true) {System.out.print("Enter a Boolean: ");  
+         while (true) {System.out.print("Enter a Boolean: ");  
         if(isValidBoolean(scan4)) {
             System.out.println("Boolean Success!");
             break;}
