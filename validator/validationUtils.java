@@ -37,9 +37,14 @@ class ValidationUtils {
         else {
             System.out.println("Boolean Failure!");
         }
-      
-       
-    }
+        while (true) {System.out.print("Enter a Boolean: ");  
+        if(isValidBoolean(scan4)) {
+            System.out.println("Boolean Success!");
+            break;}
+            else {
+                System.out.println("Boolean Failure!");
+            } 
+        }}
 
     public static Boolean isValidString(Scanner scan) {
         try {
