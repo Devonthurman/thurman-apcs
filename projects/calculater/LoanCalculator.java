@@ -31,8 +31,16 @@ public class LoanCalculator{
     }
 
     public static void flatInterest() {
-        System.out.println("Still a stub function. Not yet implemented"); //Delete this once you implement the function
+        while (true) {System.out.println("Enter Loan amount"); //Delete this once you implement the function
         //Calculate flat interest and print it out here
+        Scanner scan2 = new Scanner(System.in);
+        if(isValidInt(scan2)) {
+            System.out.println("Int Success!");
+        }
+        else {
+            
+        }}
+
     }
 
     public static void printModeStatement() {
@@ -43,5 +51,15 @@ public class LoanCalculator{
             + "(3) Compounding Interest With Monthly Payments\n"
         );
     }
+    public static Boolean isValidInt(Scanner scan2) {
+        try {
+            int s = scan2.nextInt();
+        }
+        catch(Exception e) {
+            return false;
+        }
+        return true; 
+    }
+  
 }
-
+      
