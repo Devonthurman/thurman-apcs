@@ -33,15 +33,37 @@ public class LoanCalculator{
     public static void flatInterest() {
         while (true) {System.out.println("Enter Loan amount"); //Delete this once you implement the function
         //Calculate flat interest and print it out here
-        Scanner scan2 = new Scanner(System.in);
-        if(isValidInt(scan2)) {
-            System.out.println("Int Success!");
+        Scanner scan3 = new Scanner(System.in);
+        if(loanAmt(scan3)) {
+             break;
+            
         }
+       
         else {
+             System.out.println("Invalid amount, please resubmit");
             
         }}
-
-    }
+        while (true) {System.out.println("Enter Loan term in years");
+        Scanner scan2 = new Scanner(System.in);
+        if(loanTerm(scan2)) {
+                break;
+        }
+        else {
+            System.out.println("Invalid amount, please resubmit");
+        }
+        }
+        while (true){ System.out.println("Enter Loan interest (as a percentage)");
+        Scanner scan4 = new Scanner(System.in);
+        if(interestRate(scan4)) {
+         break;
+        }
+        else {
+            System.out.println("Invalid amount, please resubmit");
+        }
+    };
+    System.out.println("Loan amount: "+loanAmt);
+    
+}
 
     public static void printModeStatement() {
         System.out.print(
@@ -51,7 +73,7 @@ public class LoanCalculator{
             + "(3) Compounding Interest With Monthly Payments\n"
         );
     }
-    public static Boolean isValidInt(Scanner scan2) {
+     public static Boolean loanTerm(Scanner scan2) {
         try {
             int s = scan2.nextInt();
         }
@@ -60,6 +82,23 @@ public class LoanCalculator{
         }
         return true; 
     }
-  
+     public static Boolean loanAmt(Scanner scan3) {
+        try {
+            double n = scan3.nextDouble();
+        }
+        catch(Exception e) {
+            return false; 
+        }
+        return true; 
+    }   
+         public static Boolean interestRate(Scanner scan4) {
+        try {
+            double n = scan4.nextDouble();
+        }
+        catch(Exception e) {
+            return false;
+        }
+        return true; 
+    }
 }
       
