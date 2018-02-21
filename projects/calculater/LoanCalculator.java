@@ -31,39 +31,46 @@ public class LoanCalculator{
     }
 
     public static void flatInterest() {
-        while (true) {System.out.println("Enter Loan amount"); //Delete this once you implement the function
+        while (true) {
+            System.out.println("Enter Loan amount"); //Delete this once you implement the function
         //Calculate flat interest and print it out here
-        Scanner scan3 = new Scanner(System.in);
-        if(loanAmt(scan3)) {
-             break;
-            
+            Scanner scan3 = new Scanner(System.in);
+            if(scan3.hasNextDouble()) {
+                loanAmt = scan3.nextDouble();
+                break;  
+            }
+            else {
+                System.out.println("Invalid amount, please resubmit");
+                
+            }
         }
-       
-        else {
-             System.out.println("Invalid amount, please resubmit");
-            
-        }}
-        while (true) {System.out.println("Enter Loan term in years");
-        Scanner scan2 = new Scanner(System.in);
-        if(loanTerm(scan2)) {
+        while (true) {
+            System.out.println("Enter Loan term in years");
+            Scanner scan2 = new Scanner(System.in);
+            if(scan2.hasNextInt()) {
+                loanTerm = scan2.nextInt();
+                 break;
+            }
+            else {
+                System.out.println("Invalid amount, please resubmit");
+            }
+        }
+        while (true){ 
+            System.out.println("Enter Loan interest (as a percentage)");
+            Scanner scan4 = new Scanner(System.in);
+            if(scan4.hasNextDouble()) {
+                interestRate = scan4.nextDouble();
                 break;
+            }
+            else {
+                System.out.println("Invalid amount, please resubmit");
+            }
         }
-        else {
-            System.out.println("Invalid amount, please resubmit");
-        }
-        }
-        while (true){ System.out.println("Enter Loan interest (as a percentage)");
-        Scanner scan4 = new Scanner(System.in);
-        if(interestRate(scan4)) {
-         break;
-        }
-        else {
-            System.out.println("Invalid amount, please resubmit");
-        }
-    };
-    System.out.println("Loan amount: "+loanAmt);
-    
-}
+        System.out.println("Loan amount: "+loanAmt);
+        System.out.println("Loan amount: "+loanTerm);
+        System.out.println("Loan amount: "+interestRate);
+        
+    }
 
     public static void printModeStatement() {
         System.out.print(
