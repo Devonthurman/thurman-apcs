@@ -159,14 +159,24 @@ public class LoanCalculator{
                 System.out.println("Invalid amount, please resubmit");
             }
         }
-        // double ratePerMonth = interestRate /12;
-        // double monthlyPayment = 1 + loanAmt * (ratePerMonth / (1 - Math.pow((1 + ratePerMonth), (loanTerm * -12))));
-        // System.out.println("Loan amount: $"+loanAmt);
-        // System.out.println("Loan term: "+loanTerm+" years");
-        // System.out.println("Loan interest rate: "+interestRate+"%");
-        // System.out.println("Loan interest: $"+ interest);
-        // System.out.println("Total paid amount: $"+totalAmt);
-    }    
+        double ratePerMonth = interestRate /12;
+        double monthlyPayment = 1 + loanAmt * (ratePerMonth / (1 - Math.pow((1 + ratePerMonth), (loanTerm * -12))));
+        double totalAmt=loanAmt;
+        while (totalAmt > 0) {
+            double interest=totalAmt*(interestRate/12/100);
+            totalAmt=totalAmt+interest-monthlyPayment;
+        }
+        double interest=-1*totalAmt;
+        double finalmonth=monthlyPayment-interest;
+        double finalloan=(-1*totalAmt)+loanAmt;
+        System.out.println("Loan amount: $"+loanAmt);
+        System.out.println("Loan term: "+loanTerm+" years");
+        System.out.println("Loan interest rate: "+interestRate+"%");
+        System.out.println("Loan interest: $"+interest);
+        System.out.println("Average monthly payment: $"+monthlyPayment);
+        System.out.println("Final monthly payment: $"+finalmonth);
+        System.out.println("Total loan amount: "+finalloan);
+    }
 
     public static void printModeStatement() {
         System.out.print(
