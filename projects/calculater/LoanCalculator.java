@@ -25,9 +25,12 @@ public class LoanCalculator{
         if(mode == 1) {
             flatInterest();
         }
-        else {
-            System.out.println("Other modes not yet supported."); //Replace this with calls to your appropriate functions            
+        if(mode == 2){
+            compoundinterestnomonthly();
         }
+        if(mode == 3) {
+            compoundinterestmonthly();
+        }    
     }
 
     public static void flatInterest() {
@@ -40,8 +43,7 @@ public class LoanCalculator{
                 break;  
             }
             else {
-                System.out.println("Invalid amount, please resubmit");
-                
+                System.out.println("Invalid amount, please resubmit");   
             }
         }
         while (true) {
@@ -66,11 +68,102 @@ public class LoanCalculator{
                 System.out.println("Invalid amount, please resubmit");
             }
         }
-        System.out.println("Loan amount: "+loanAmt);
-        System.out.println("Loan amount: "+loanTerm);
-        System.out.println("Loan amount: "+interestRate);
-        
+        double interest=loanAmt*loanTerm*interestRate*0.01;
+        double totalAmt=loanAmt+loanAmt*loanTerm*interestRate*0.01;
+        System.out.println("Loan amount: $"+loanAmt);
+        System.out.println("Loan term: "+loanTerm+" years");
+        System.out.println("Loan interest rate: "+interestRate+"%");
+        System.out.println("Loan interest: $"+ interest);
+        System.out.println("Total paid amount: $"+totalAmt);    
     }
+    public static void compoundinterestnomonthly() {
+        while (true) {
+            System.out.println("Enter Loan amount");
+            Scanner scan3 = new Scanner(System.in);
+            if(scan3.hasNextDouble()) {
+                loanAmt = scan3.nextDouble();
+                break;  
+            }
+            else {
+                System.out.println("Invalid amount, please resubmit");   
+            }
+        }
+        while (true) {
+            System.out.println("Enter Loan term in years");
+            Scanner scan2 = new Scanner(System.in);
+            if(scan2.hasNextInt()) {
+                loanTerm = scan2.nextInt();
+                 break;
+            }
+            else {
+                System.out.println("Invalid amount, please resubmit");
+            }
+        }
+        while (true){ 
+            System.out.println("Enter Loan interest (as a percentage)");
+            Scanner scan4 = new Scanner(System.in);
+            if(scan4.hasNextDouble()) {
+                interestRate = scan4.nextDouble();
+                break;
+            }
+            else {
+                System.out.println("Invalid amount, please resubmit");
+            }
+        }
+        // int monthsRemaining=loanTerm*12;
+        // while (monthsRemaining > 0) {
+        //     double interest=totalAmt*(interestRate/12);
+        //     double totalAmt=totalAmt+interest;
+        // }
+        // double totalAmt=loanAmt+loanAmt*loanTerm*interestRate*0.01;
+        // double interest=totalAmt - loanAmt;
+        // System.out.println("Loan amount: $"+loanAmt);
+        // System.out.println("Loan term: "+loanTerm+" years");
+        // System.out.println("Loan interest rate: "+interestRate+"%");
+        // System.out.println("Loan interest: $"+interest);
+    }
+    public static void compoundinterestmonthly() {
+        while (true) {
+            System.out.println("Enter Loan amount"); //Delete this once you implement the function
+            Scanner scan3 = new Scanner(System.in);
+            if(scan3.hasNextDouble()) {
+                loanAmt = scan3.nextDouble();
+                break;  
+            }
+            else {
+                System.out.println("Invalid amount, please resubmit");   
+            }
+        }
+        while (true) {
+            System.out.println("Enter Loan term in years");
+            Scanner scan2 = new Scanner(System.in);
+            if(scan2.hasNextInt()) {
+                loanTerm = scan2.nextInt();
+                 break;
+            }
+            else {
+                System.out.println("Invalid amount, please resubmit");
+            }
+        }
+        while (true){ 
+            System.out.println("Enter Loan interest (as a percentage)");
+            Scanner scan4 = new Scanner(System.in);
+            if(scan4.hasNextDouble()) {
+                interestRate = scan4.nextDouble();
+                break;
+            }
+            else {
+                System.out.println("Invalid amount, please resubmit");
+            }
+        }
+        // double ratePerMonth = interestRate /12;
+        // double monthlyPayment = 1 + loanAmt * (ratePerMonth / (1 - Math.pow((1 + ratePerMonth), (loanTerm * -12))));
+        // System.out.println("Loan amount: $"+loanAmt);
+        // System.out.println("Loan term: "+loanTerm+" years");
+        // System.out.println("Loan interest rate: "+interestRate+"%");
+        // System.out.println("Loan interest: $"+ interest);
+        // System.out.println("Total paid amount: $"+totalAmt);
+    }    
 
     public static void printModeStatement() {
         System.out.print(
@@ -80,7 +173,7 @@ public class LoanCalculator{
             + "(3) Compounding Interest With Monthly Payments\n"
         );
     }
-     public static Boolean loanTerm(Scanner scan2) {
+    public static Boolean loanTerm(Scanner scan2) {
         try {
             int s = scan2.nextInt();
         }
@@ -89,7 +182,7 @@ public class LoanCalculator{
         }
         return true; 
     }
-     public static Boolean loanAmt(Scanner scan3) {
+    public static Boolean loanAmt(Scanner scan3) {
         try {
             double n = scan3.nextDouble();
         }
@@ -98,7 +191,7 @@ public class LoanCalculator{
         }
         return true; 
     }   
-         public static Boolean interestRate(Scanner scan4) {
+    public static Boolean interestRate(Scanner scan4) {
         try {
             double n = scan4.nextDouble();
         }
