@@ -110,17 +110,20 @@ public class LoanCalculator{
                 System.out.println("Invalid amount, please resubmit");
             }
         }
-        // int monthsRemaining=loanTerm*12;
-        // while (monthsRemaining > 0) {
-        //     double interest=totalAmt*(interestRate/12);
-        //     double totalAmt=totalAmt+interest;
-        // }
-        // double totalAmt=loanAmt+loanAmt*loanTerm*interestRate*0.01;
-        // double interest=totalAmt - loanAmt;
-        // System.out.println("Loan amount: $"+loanAmt);
-        // System.out.println("Loan term: "+loanTerm+" years");
-        // System.out.println("Loan interest rate: "+interestRate+"%");
-        // System.out.println("Loan interest: $"+interest);
+        double totalAmt=loanAmt;
+        int monthsRemaining=loanTerm*12;
+        while (monthsRemaining > 0) {
+            double interest=totalAmt*(interestRate/12/100);
+            totalAmt=totalAmt+interest;
+            monthsRemaining--;
+        }
+        double interest=totalAmt - loanAmt;
+        double finalloan=totalAmt;
+        System.out.println("Loan amount: $"+loanAmt);
+        System.out.println("Loan term: "+loanTerm+" years");
+        System.out.println("Loan interest rate: "+interestRate+"%");
+        System.out.println("Loan interest: $"+interest);
+        System.out.println("Total loan amount: "+finalloan);
     }
     public static void compoundinterestmonthly() {
         while (true) {
