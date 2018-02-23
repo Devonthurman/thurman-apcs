@@ -159,7 +159,7 @@ public class LoanCalculator{
                 System.out.println("Invalid amount, please resubmit");
             }
         }
-        double ratePerMonth = interestRate /12;
+        double ratePerMonth = interestRate /12/100;
         double monthlyPayment = 1 + loanAmt * (ratePerMonth / (1 - Math.pow((1 + ratePerMonth), (loanTerm * -12))));
         double totalAmt=loanAmt;
         while (totalAmt > 0) {
