@@ -162,13 +162,16 @@ public class LoanCalculator{
         double ratePerMonth = interestRate /12/100;
         double monthlyPayment = 1 + loanAmt * (ratePerMonth / (1 - Math.pow((1 + ratePerMonth), (loanTerm * -12))));
         double totalAmt=loanAmt;
+        double finalinterest=-1;
         while (totalAmt > 0) {
             double interest=totalAmt*(interestRate/12/100);
+            finalinterest += interest;
             totalAmt=totalAmt+interest-monthlyPayment;
         }
-        double interest=-1*totalAmt;
-        double finalmonth=monthlyPayment-interest;
-        double finalloan=(-1*totalAmt)+loanAmt;
+
+        double interest=finalinterest;
+        double finalmonth=monthlyPayment+totalAmt;
+        double finalloan=interest+loanAmt;
         System.out.println("Loan amount: $"+loanAmt);
         System.out.println("Loan term: "+loanTerm+" years");
         System.out.println("Loan interest rate: "+interestRate+"%");
