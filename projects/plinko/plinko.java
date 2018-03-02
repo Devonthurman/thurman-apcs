@@ -4,6 +4,7 @@ class plinko {
     public static final int SINGLE_DISC = 1;
     public static final int MULTI_DISC = 2;
     public static final int TERMINATE = 3;
+    public static int row1slot=-1;
 
     public static final int[] VALUES = {1, 3, 2, 0, 5, 0, 2, 3, 1};
 
@@ -20,6 +21,7 @@ class plinko {
                 mode = scan.nextInt();
                 if(mode == SINGLE_DISC) {
                     SINGLE_DISC();
+                    break;
                 }
                 else if(mode == MULTI_DISC) {
                     System.out.println("Mode not yet implemented");
@@ -62,14 +64,17 @@ class plinko {
     }
     public static void SINGLE_DISC(){
         System.out.print("enter starting position from 0-8: ");
-        Scanner scan2 = new Scanner(System.in);
-        if(isValidslot(scan2)) {
-        }
-        else {
-            System.out.println("Invalid position");
-        }
-        
-
+         while (true) {
+            Scanner scan2 = new Scanner(System.in);
+            if(scan2.hasNextInt()) {
+                row1slot = scan2.nextInt();
+                break;
+            }
+            if(0<row1slot||row1slot<8){
+                break;
+            }
+            else()   
+         }
     }
     public static Boolean isValidslot(Scanner scan2) {
     try {
