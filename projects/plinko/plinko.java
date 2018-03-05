@@ -35,8 +35,41 @@ class plinko {
             }
         }
     }
+    public static void SINGLE_DISC(){
+        System.out.print("enter starting position from 0-8: ");
+         while (true) {
+            Scanner scan2 = new Scanner(System.in);
+            if(scan2.hasNextInt()) {
+                row1slot = scan2.nextInt();
+                break;
+            }
+            if(0<row1slot||row1slot<8){
+                break;
+            }
+            else{
+                System.out.println("Please resubmit a valid position");
+            }
+        }
+        if(int i=0,i<16,i++){
+            if(i=16){
+                position--;
+            }
+        }
+    }
 
     public static int runOddRow(int position) {
+        for(int i = 0; i <= 16; i++) {
+        if(position == i) {
+            System.out.print("☻");
+        }
+        else if(isEven(i)) {
+            System.out.print(" ");
+        }
+        else {
+            System.out.print(".");
+        }
+    }
+    System.out.print("\n");
         //Modify the position.
         //Print the visualization of the row if it's single disc mode.
 
@@ -44,6 +77,18 @@ class plinko {
     }
 
     public static int runEvenRow(int position) {
+        for(int i = 0; i <= 16; i++) {
+        if(position == i) {
+            System.out.print("☻");
+        }
+        else if(isEven(i)) {
+            System.out.print(".");
+        }
+        else {
+            System.out.print(" ");
+        }
+    }
+    System.out.print("\n");
         //Modify the position.
         //Print the visualization of the row if it's single disc mode.
 
@@ -62,28 +107,15 @@ class plinko {
             + "\t(3) Quit\n"
         );
     }
-    public static void SINGLE_DISC(){
-        System.out.print("enter starting position from 0-8: ");
-         while (true) {
-            Scanner scan2 = new Scanner(System.in);
-            if(scan2.hasNextInt()) {
-                row1slot = scan2.nextInt();
-                break;
-            }
-            if(0<row1slot||row1slot<8){
-                break;
-            }
-            else()   
-         }
-    }
+
     public static Boolean isValidslot(Scanner scan2) {
-    try {
-        int s = scan2.nextInt();
-    }
-    catch(Exception e) {
-        return false;
-    }
-    return true; 
-    }
+        try {
+            int s = scan2.nextInt();
+        }
+        catch(Exception e) {
+            return false;
+        }
+        return true; 
+        }
 }
 
