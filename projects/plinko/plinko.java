@@ -4,7 +4,7 @@ class plinko {
     public static final int SINGLE_DISC = 1;
     public static final int MULTI_DISC = 2;
     public static final int TERMINATE = 3;
-    public static int row1slot=-1;
+    public static int userselectedposition=-1;
 
     public static final int[] VALUES = {1, 3, 2, 0, 5, 0, 2, 3, 1};
 
@@ -36,23 +36,30 @@ class plinko {
         }
     }
     public static void SINGLE_DISC(){
-        System.out.print("enter starting position from 0-8: ");
+        
          while (true) {
+            System.out.print("enter starting position from 0-8: "); 
             Scanner scan2 = new Scanner(System.in);
             if(scan2.hasNextInt()) {
-                row1slot = scan2.nextInt();
-                break;
-            }
-            if(0<row1slot||row1slot<8){
+               int row1slot = scan2.nextInt();
                 break;
             }
             else{
                 System.out.println("Please resubmit a valid position");
             }
         }
-        if(int i=0,i<16,i++){
-            if(i=16){
+        runplinko();
+    }
+
+    public static void runplinko(){
+        int i=0;
+        for(i=0;i<=12;i++){
+            int position=userselectedposition*2;
+            if(position>16){
                 position--;
+            }
+            if(position<0){
+                position++;
             }
         }
     }
