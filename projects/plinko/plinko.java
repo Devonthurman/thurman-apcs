@@ -5,6 +5,7 @@ class plinko {
     public static final int MULTI_DISC = 2;
     public static final int TERMINATE = 3;
     public static int userselectedposition=-1;
+    public static int position=userselectedposition*2;
 
     public static final int[] VALUES = {1, 3, 2, 0, 5, 0, 2, 3, 1};
 
@@ -41,30 +42,47 @@ class plinko {
             System.out.print("enter starting position from 0-8: "); 
             Scanner scan2 = new Scanner(System.in);
             if(scan2.hasNextInt()) {
-               int row1slot = scan2.nextInt();
-                break;
+                userselectedposition = scan2.nextInt();
+                if(0<= userselectedposition && userselectedposition <= 8){
+                    break;
+                }
+                else{
+                System.out.println("Please resubmit a valid position");
+                }
             }
             else{
                 System.out.println("Please resubmit a valid position");
             }
         }
+        position=userselectedposition*2;
+        runEvenRow(position);
         runplinko();
+        
+        System.out.println(position);
     }
 
     public static void runplinko(){
         int i=0;
         for(i=0;i<=12;i++){
-            int position=userselectedposition*2;
-            if(position>16){
+            if(Math.random()>0.5){
                 position--;
             }
-            if(position<0){
+            else if(position>16){
+                position--;
+            }
+            else if(position<0){
                 position++;
             }
+            else{
+                position++;
+            }
+            runEvenRow(position);
+            runOddRow(position);
         }
     }
 
     public static int runOddRow(int position) {
+        System.out.print("|");
         for(int i = 0; i <= 16; i++) {
         if(position == i) {
             System.out.print("☻");
@@ -84,6 +102,7 @@ class plinko {
     }
 
     public static int runEvenRow(int position) {
+        System.out.print("|");
         for(int i = 0; i <= 16; i++) {
         if(position == i) {
             System.out.print("☻");
