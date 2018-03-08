@@ -55,15 +55,15 @@ class plinko {
             }
         }
         position=userselectedposition*2;
-        runEvenRow(position);
+        runOddRow(position);
         runplinko();
         
-        System.out.println(position);
+
     }
 
     public static void runplinko(){
         int i=0;
-        for(i=0;i<=12;i++){
+        for(i=0;i<=10;i++){
             if(Math.random()>0.5){
                 position--;
             }
@@ -76,9 +76,17 @@ class plinko {
             else{
                 position++;
             }
-            runEvenRow(position);
-            runOddRow(position);
-        }
+            if (isEven(i)){
+                runEvenRow(position);
+            }  
+            else if(i<=9){
+                runOddRow(position);
+            }  
+            if (i>9){
+                runfinalrow(position);
+            }
+        } 
+        System.out.println("|1|3|2|0|5|0|2|3|1|");   
     }
 
     public static int runOddRow(int position) {
@@ -94,6 +102,7 @@ class plinko {
             System.out.print(".");
         }
     }
+    System.out.print("|");
     System.out.print("\n");
         //Modify the position.
         //Print the visualization of the row if it's single disc mode.
@@ -114,6 +123,27 @@ class plinko {
             System.out.print(" ");
         }
     }
+    System.out.print("|");
+    System.out.print("\n");
+        //Modify the position.
+        //Print the visualization of the row if it's single disc mode.
+
+        return position;
+    }
+    public static int runfinalrow(int position){
+        System.out.print("|");
+        for(int i = 0; i <= 16; i++) {
+        if(position == i) {
+            System.out.print("☻");
+        }
+        else if(isEven(i)) {
+            System.out.print("_");
+        }
+        else {
+            System.out.print("|");
+        }
+    }
+    System.out.print("|");
     System.out.print("\n");
         //Modify the position.
         //Print the visualization of the row if it's single disc mode.
