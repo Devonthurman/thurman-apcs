@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class plinko {
+class test {
     public static final int SINGLE_DISC = 1;
     public static final int MULTI_DISC = 2;
     public static final int TERMINATE = 3;
@@ -22,10 +22,7 @@ class plinko {
             printModeStatement();
             if(scan.hasNextInt()) {
                 mode = scan.nextInt();
-                if(mode == SINGLE_DISC) {
-                    SINGLE_DISC();
-                }
-                else if(mode == MULTI_DISC) {
+                if(mode == MULTI_DISC) {
                     MULTI_DISC();
                 }
                 else if(mode == TERMINATE) {
@@ -37,30 +34,7 @@ class plinko {
             }
         }
     }
-    public static void SINGLE_DISC(){
-        while (true) {
-            System.out.print("enter starting position from 0-8: "); 
-            Scanner scan2 = new Scanner(System.in);
-            if(scan2.hasNextInt()) {
-                userselectedposition = scan2.nextInt();
-                if(0<= userselectedposition && userselectedposition <= 8){
-                    break;
-                }
-                else{
-                System.out.println("Please resubmit a valid position");
-                }
-            }
-            else{
-                System.out.println("Please resubmit a valid position");
-            }
-        }
-        position=userselectedposition*2;
-        runOddRow(position);
-        runplinko();
-        int finalposition=(position/2)+1;
-        int v=position/2;
-        System.out.println("You landed in slot "+finalposition+" and won "+VALUES[v]+" points.");
-    }
+   
 
     public static void MULTI_DISC(){
         while (true) {
@@ -108,33 +82,6 @@ class plinko {
         System.out.println("Total points earned: ");
     }
 
-    public static void runplinko(){
-        int i=0;
-        for(i=0;i<=10;i++){
-            if(Math.random()>0.5){
-                position--;
-            }
-            if(position>=16){
-                position--;
-            }
-            if(position<=0){
-                position++;
-            }
-            else{
-                position++;
-            }
-            if (isEven(i)){
-                runEvenRow(position);
-            }  
-            else if(i<=9){
-                runOddRow(position);
-            }  
-            if (i>9){
-                runfinalrow(position);
-            }
-        } 
-        System.out.println("|1|3|2|0|5|0|2|3|1|");   
-    }
     public static void runplinkomult(){
         int i=0;
         while(discnum>0){
@@ -158,70 +105,6 @@ class plinko {
             results[k]++;
         }
     }
-
-    public static int runOddRow(int position) {
-        System.out.print("|");
-        for(int i = 0; i <= 16; i++) {
-            if(position == i) {
-                System.out.print("☻");
-            }
-            else if(isEven(i)) {
-                System.out.print(" ");
-            }
-            else {
-                System.out.print(".");
-            }
-        }
-        System.out.print("|");
-        System.out.print("\n");
-            //Modify the position.
-            //Print the visualization of the row if it's single disc mode.
-
-        return position;
-    }
-
-    public static int runEvenRow(int position) {
-        System.out.print("|");
-        for(int i = 0; i <= 16; i++) {
-            if(position == i) {
-                System.out.print("☻");
-            }
-            else if(isEven(i)) {
-                System.out.print(".");
-            }
-            else {
-                System.out.print(" ");
-            }
-        }
-        System.out.print("|");
-        System.out.print("\n");
-            //Modify the position.
-            //Print the visualization of the row if it's single disc mode.
-        return position;
-    }
-    public static int runfinalrow(int position){
-        for(int i = 0; i <= 18; i++) {
-            if(position == i) {
-                System.out.print("☻");
-            }
-            else if(isEven(i)) {
-                System.out.print("|");
-            }
-            else {
-                System.out.print("_");
-            }
-        }
-        System.out.print("\n");
-            //Modify the position.
-            //Print the visualization of the row if it's single disc mode.
-
-        return position;
-    }
-
-    public static Boolean isEven(int x) {
-        return x % 2 == 0;
-    }
-
     public static void printModeStatement() {
         System.out.print(
             "Select a mode:\n"
