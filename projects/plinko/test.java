@@ -69,6 +69,15 @@ class test {
                 System.out.println("Please resubmit a valid position");
             }    
         }
+        results[0]=0;
+        results[1]=0;
+        results[2]=0;
+        results[3]=0;
+        results[4]=0;
+        results[5]=0;
+        results[6]=0;
+        results[7]=0;
+        results[8]=0;
         runplinkomult();
         System.out.println("Scored 1 point in position 1: "+results[0]+" times.");
         System.out.println("Scored 3 point in position 2: "+results[1]+" times.");
