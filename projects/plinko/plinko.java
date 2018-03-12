@@ -9,6 +9,8 @@ class plinko {
     public static int discnum=-1;
 
     public static final int[] VALUES = {1, 3, 2, 0, 5, 0, 2, 3, 1};
+    public static int[] results={0,0,0,0,0,0,0,0,0};
+
     public static int mode = -1;
 
     public static void main(String[] args) {
@@ -93,9 +95,16 @@ class plinko {
                 System.out.println("Please resubmit a valid position");
             }    
         }
-        int[] results={0,0,0,0,0,0,0,0,0};
-
-        runplinkomult(int[] results);
+        results[0]=0;
+        results[1]=0;
+        results[2]=0;
+        results[3]=0;
+        results[4]=0;
+        results[5]=0;
+        results[6]=0;
+        results[7]=0;
+        results[8]=0;
+        runplinkomult();
         System.out.println("Scored 1 point in position 1: "+results[0]+" times.");
         System.out.println("Scored 3 point in position 2: "+results[1]+" times.");
         System.out.println("Scored 2 point in position 3: "+results[2]+" times.");
@@ -105,20 +114,20 @@ class plinko {
         System.out.println("Scored 2 point in position 7: "+results[6]+" times.");
         System.out.println("Scored 3 point in position 8: "+results[7]+" times.");
         System.out.println("Scored 1 point in position 9: "+results[8]+" times.");
-        System.out.println("Total points earned: ");
+        System.out.println("Total points earned: "+(results[0]+(results[1]*3)+(results[2]*2)+(results[4]*5)+(results[6]*2)+(results[7]*3)+results[8]));
     }
 
     public static void runplinko(){
         int i=0;
         for(i=0;i<=10;i++){
-            if(Math.random()>0.5){
-                position--;
-            }
             if(position>=16){
                 position--;
             }
             if(position<=0){
                 position++;
+            }
+            if(Math.random()>0.5){
+                position--;
             }
             else{
                 position++;
@@ -135,16 +144,7 @@ class plinko {
         } 
         System.out.println("|1|3|2|0|5|0|2|3|1|");   
     }
-    public static void runplinkomult(int[] results){
-        results[0]=0;
-        results[1]=0;
-        results[2]=0;
-        results[3]=0;
-        results[4]=0;
-        results[5]=0;
-        results[6]=0;
-        results[7]=0;
-        results[8]=0;
+    public static void runplinkomult(){
         int i=0;
         while(discnum>0){
             discnum--;
@@ -168,7 +168,7 @@ class plinko {
         }
     }
 
-    public static int runOddRow() {
+    public static int runOddRow(int position) {
         System.out.print("|");
         for(int i = 0; i <= 16; i++) {
             if(position == i) {
