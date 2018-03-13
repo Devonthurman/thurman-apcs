@@ -126,11 +126,11 @@ class plinko {
             if(position<=0){
                 position++;
             }
-            if(Math.random()>0.5){
-                position--;
+            if(Math.random()>.5){
+                position++;
             }
             else{
-                position++;
+                position--;
             }
             if (isEven(i)){
                 runEvenRow(position);
@@ -151,7 +151,7 @@ class plinko {
             position=userselectedposition*2;
             for(i=0;i<=12;i++){
                 if(Math.random()>0.5){
-                    position--;
+                    position++;
                 }
                 if(position>=16){
                     position--;
@@ -160,7 +160,7 @@ class plinko {
                     position++;
                 }
                 else{
-                    position++;
+                    position--;
                 }
             }
             int k=position/2;
