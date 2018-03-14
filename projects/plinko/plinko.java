@@ -120,13 +120,13 @@ class plinko {
     public static void runplinko(){
         int i=0;
         for(i=0;i<=10;i++){
-            if(position>=16){
+            if(position==16){
                 position--;
             }
-            if(position<=0){
+            else if(position==0){
                 position++;
             }
-            if(Math.random()>.5){
+            else if(Math.random()>.5){
                 position++;
             }
             else{
@@ -141,7 +141,7 @@ class plinko {
             if (i>9){
                 runfinalrow(position);
             }
-        } 
+        }
         System.out.println("|1|3|2|0|5|0|2|3|1|");   
     }
     public static void runplinkomult(){
@@ -150,13 +150,13 @@ class plinko {
             discnum--;
             position=userselectedposition*2;
             for(i=0;i<=12;i++){
-                if(Math.random()>0.5){
-                    position++;
-                }
-                if(position>=16){
+                if(position==16){
                     position--;
                 }
-                if(position<=0){
+                else if(position==0){
+                    position++;
+                }
+                else if(Math.random()>.5){
                     position++;
                 }
                 else{
