@@ -57,7 +57,7 @@ class plinko {
         position=userselectedposition*2;
         runOddRow(position);
         runplinko();
-        int finalposition=(position/2)+1;
+        int finalposition=(position/2);
         int v=position/2;
         System.out.println("You landed in slot "+finalposition+" and won "+VALUES[v]+" points.");
     }
@@ -105,15 +105,15 @@ class plinko {
         results[7]=0;
         results[8]=0;
         runplinkomult();
-        System.out.println("Scored 1 point in position 1: "+results[0]+" times.");
-        System.out.println("Scored 3 point in position 2: "+results[1]+" times.");
-        System.out.println("Scored 2 point in position 3: "+results[2]+" times.");
-        System.out.println("Scored 0 point in position 4: "+results[3]+" times.");
-        System.out.println("Scored 5 point in position 5: "+results[4]+" times.");
-        System.out.println("Scored 0 point in position 6: "+results[5]+" times.");
-        System.out.println("Scored 2 point in position 7: "+results[6]+" times.");
-        System.out.println("Scored 3 point in position 8: "+results[7]+" times.");
-        System.out.println("Scored 1 point in position 9: "+results[8]+" times.");
+        System.out.println("Scored 1 point in position 0: "+results[0]+" times.");
+        System.out.println("Scored 3 point in position 1: "+results[1]+" times.");
+        System.out.println("Scored 2 point in position 2: "+results[2]+" times.");
+        System.out.println("Scored 0 point in position 3: "+results[3]+" times.");
+        System.out.println("Scored 5 point in position 4: "+results[4]+" times.");
+        System.out.println("Scored 0 point in position 5: "+results[5]+" times.");
+        System.out.println("Scored 2 point in position 6: "+results[6]+" times.");
+        System.out.println("Scored 3 point in position 7: "+results[7]+" times.");
+        System.out.println("Scored 1 point in position 8: "+results[8]+" times.");
         System.out.println("Total points earned: "+(results[0]+(results[1]*3)+(results[2]*2)+(results[4]*5)+(results[6]*2)+(results[7]*3)+results[8]));
     }
 
