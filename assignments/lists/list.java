@@ -7,17 +7,6 @@ class list{
         for(int i=0;i<todolist.size();i++){
             System.out.println(todolist.get(i));
         }
-        while (true) {
-            System.out.print("Enter and index number to view: ");
-            Scanner scan = new Scanner(System.in);
-            if(scan.hasNextInt()) {
-                indexnum = scan.nextInt();
-                break;
-            }
-            else {
-                System.out.println("Invalid amount, please resubmit");
-            }
-        }
         viewindex();
         System.out.println(indexnum);
     }
