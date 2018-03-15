@@ -116,7 +116,7 @@ class plinko {
         System.out.println("Scored 1 point in position 8: "+results[8]+" times.");
         System.out.println("Total points earned: "+(results[0]+(results[1]*3)+(results[2]*2)+(results[4]*5)+(results[6]*2)+(results[7]*3)+results[8]));
     }
-
+    
     public static void runplinko(){
         int i=0;
         for(i=0;i<=11;i++){
