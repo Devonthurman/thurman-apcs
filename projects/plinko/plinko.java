@@ -119,7 +119,7 @@ class plinko {
 
     public static void runplinko(){
         int i=0;
-        for(i=0;i<=10;i++){
+        for(i=0;i<=11;i++){
             if(position==16){
                 position--;
             }
@@ -135,12 +135,12 @@ class plinko {
             if (isEven(i)){
                 runEvenRow(position);
             }  
-            else if(i<=9){
+            else{
                 runOddRow(position);
             }  
-            if (i>9){
-                runfinalrow(position);
-            }
+            // if (i>9){
+            //     runfinalrow(position);
+            // }
         }
         System.out.println("|1|3|2|0|5|0|2|3|1|");   
     }
@@ -149,7 +149,7 @@ class plinko {
         while(discnum>0){
             discnum--;
             position=userselectedposition*2;
-            for(i=0;i<=12;i++){
+            for(i=0;i<=11;i++){
                 if(position==16){
                     position--;
                 }
