@@ -184,7 +184,7 @@ In terms of `n`, which Java expression represents the **maximum** number of time
     (D) n - 1
     (E) n - 1 / 2
 ```
-Answer:
+Answer: B
 _____________________________
 
 9. Consider the following instance variable and method:
@@ -214,7 +214,7 @@ Which of the following lists the correct values of the numbers array after execu
     (D) {10, 100, 30, 40, 250, 60, 70, 400, 90, 100}
     (E) {10, 20, 150, 40, 250, 60, 350, 80, 450, 100}
 ```
-Answer:
+Answer: B
 _____________________________
 
 10. What is printed as a result of executing the following statement?
@@ -229,4 +229,4 @@ _____________________________
         (D) 34
         (E) 86
 ```
-Answer:
+Answer: E
