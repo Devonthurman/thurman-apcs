@@ -8,11 +8,7 @@ class list{
             System.out.println(todolist.get(i));
         }
         // viewindex();
-        for(int i=0; i<10; i++){
-           addindex();
-           System.out.println(todolist.get(i));
-           }
-        
+        addindex();  
     }
     public static void addindex(){
         while (true) {

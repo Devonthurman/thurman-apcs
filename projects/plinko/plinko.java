@@ -119,7 +119,7 @@ class plinko {
     
     public static void runplinko(){
         int i=0;
-        for(i=0;i<=11;i++){
+        for(i=0;i<=12;i++){
             if(position==16){
                 position--;
             }
