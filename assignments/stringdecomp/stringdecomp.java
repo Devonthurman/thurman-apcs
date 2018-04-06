@@ -56,15 +56,7 @@ class stringdecomp{
      public static void findwords(){
         for(int i=0;i<message.length();i++){
             if(message.charAt(i)==' '){
-                if(message.charAt(i-1)=='.'){
-                    words.add("y");
-                }
-                if(message.charAt(i-1)==','){
-                    words.add("t");
-                }
-                else{
-                    words.add("f");
-                } 
+                
             }
         }
         
