@@ -1,13 +1,22 @@
 import java.util.*;
 class twodarray {
     public static void main (String[] args){
-    int[][] arr=new int[3][3];
-    int num = 1;
-    for(int i=0;i<arr.size();i++){
-        for(int j=0;j<arr[i].length();j++){
-
+        int[][] arr=new int[3][3];
+        int num = 1;
+        for(int i=0;i<arr.length;i++){
+            for(int j=0;j<arr[i].length;j++){
+                arr[i][j]=num;
+                num*=3;
+            }
         }
-    }   
+        int[][] arr2= new int[5][5];
+        num = -1;
+        for(int i = 0; i < arr2.length; i++) {
+            for(int j = 0; j < arr2[i].length; j++) {
+                arr2[i][j] = num;
+                num--;
+            }
+        } 
     }
 }
 
