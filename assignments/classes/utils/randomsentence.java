@@ -3,7 +3,7 @@ package utils;
 import java.util.ArrayList;
 
 public class randomsentence {
-    private static String[] subjects = {"I", "He", "She", "That guy", "Whatshername", "The dog"};
+    private static String[] subjects = {"I", "He", "She", "That guy", "Whatshername", "The dog","Cthulu"};
     private static String[] objects = {"the dog", "a ball", "my keyboard", "a door", "the desk"};
     private static String[] verbs = {"kicked", "bought", "ran into", "fell off of", "tried to jump across", "ate"};
 
