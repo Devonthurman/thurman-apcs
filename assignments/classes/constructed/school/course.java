@@ -10,11 +10,9 @@ public class course{
         this.courseid = courseid;
         this.teachername = teachername;
         this.room = room;
-        course c = new course("Computer Science", "CS101", "Mr. Merrell", "L39B");
     }
 
-    public String tostring(){
-        String classinfo="Course: "+coursename+"; ID:"+courseid+"; Teacher: "+ teachername+"; Room:"+room;
-        return classinfo;
+    public String coursetostring(){
+        return "Course: "+coursename+"; ID:"+courseid+"; Teacher: "+ teachername+"; Room:"+room;
     }
 }
