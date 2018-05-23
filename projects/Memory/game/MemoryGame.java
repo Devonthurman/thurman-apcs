@@ -1,13 +1,15 @@
 package game;
 
 public class MemoryGame {
-    public static int unknown;
+    public static int boardsize;
     public static int wordamount;
     public static int allowedfails;
-    public MemoryGame(int unknown, int wordamount, int allowedfails){
-        this.unknown=unknown;
+    public String[][] board;
+    public MemoryGame(int boardsize, int wordamount, int allowedfails){
+        this.boardsize=boardsize;
         this.wordamount=wordamount;
         this.allowedfails=allowedfails;
-        System.out.println(unknown+wordamount+allowedfails);   
+        board=new String[boardsize][boardsize];
+        MemoryPiece popboard= new MemoryPiece();
     }    
 }

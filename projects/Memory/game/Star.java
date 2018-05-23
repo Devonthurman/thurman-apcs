@@ -1,5 +1,5 @@
 package game;
 
-public class Star extends MemoryPiece {
+public class star extends MemoryPiece {
     
 }

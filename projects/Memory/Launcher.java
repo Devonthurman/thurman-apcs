@@ -2,6 +2,6 @@ import game.*;
 
 public class Launcher {
     public static void main(String args[]){
-        MemoryGame(4,6,10);
+        MemoryGame game= new MemoryGame(4,6,10);
     }
 }
